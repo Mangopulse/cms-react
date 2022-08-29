@@ -1,0 +1,582 @@
+
+
+
+
+        <!DOCTYPE html>
+    
+        <html lang="ar" dir="rtl" data-admin="51">
+        <head>
+            <title>Mangopulse Admin</title>
+            <link rel="icon" href="">
+            <link rel="stylesheet" href="css/bootstrap.min.css">
+            <link rel="stylesheet" type="text/css" href="css/jquery.datetimepicker.css" />
+            <link rel="stylesheet" href="css/bootstrap-tagsinput.css">
+
+            <link
+            rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.13.1/css/all.css"
+            integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q"
+            crossorigin="anonymous"
+          />
+    
+            <style>
+                .pull-left {
+                    float: left;
+                }
+    
+                .pull-right {
+                    float: right;
+                }
+    
+                .navbar {
+                    padding: 0;
+                }
+    
+                .navbar-container {
+                    text-align: center;
+                    width: 100%;
+                }
+    
+                .breadcrumb > li {
+                    display: inline-block;
+                }
+    
+                .nav-list > li {
+                    width: 100%;
+                }
+    
+                .dropdown-toggle::after {
+                    content: none;
+                }
+    
+                .form-group {
+                    display: flex;
+                    -ms-flex-wrap: wrap;
+                    flex-wrap: wrap;
+                }
+    
+                [data-toggle="buttons"] > .btn > input[type="radio"], [data-toggle="buttons"] > .btn > input[type="checkbox"] {
+                    display: none
+                }
+    
+                .nav-tabs {
+                    margin-bottom: 1rem;
+                }
+    
+                .fade.active {
+                    opacity: 1;
+                }
+    
+                .label {
+                    white-space: nowrap;
+                }
+    
+                .hidden {
+                    display: none;
+                }
+    
+                .custom-switch .custom-control-label:before, .custom-switch .custom-control-label:after, .custom-switch .custom-control-label {
+                    cursor: pointer;
+                }
+            </style>
+    
+            <link href="css/all.min.css" rel="stylesheet" />
+            <link href="css/jquery.Jcrop.css" rel="stylesheet" />
+            <link href="css/colorbox.css" rel="stylesheet" />
+            <link href="css/main.css" rel="stylesheet" />
+            <link href="css/select2.min.css" rel="stylesheet" />
+            <link href="css/chosen.css" rel="stylesheet" />
+            <link href="css/jquery.gritter.css" rel="stylesheet" />
+            <link href="css/ace.css" rel="stylesheet" />
+            <link href="css/daterangepicker-bs3.css" rel="stylesheet" />
+            <link href="css/bootstrap-wizard.css" rel="stylesheet" />
+            <link href="css/duallist.css" rel="stylesheet" />
+            <link href="css/jquery-ui.custom.min.css" rel="stylesheet" />
+            <link href="css/bootstrap-iconpicker.min.css" rel="stylesheet" />
+            <link href="css/backoffice.css" rel="stylesheet" />
+            <link href="css/ace-rtl.css" rel="stylesheet" />
+            <link href="css/Frutiger.css" rel="stylesheet" />
+    
+    
+            <!-- Bootstrap-Iconpicker -->
+            <script type="text/javascript" >
+        window.AppResources = {
+            YouCannotAddOrRemoveMedia: "You Cannot Add Or Remove Media",
+            ZeroRecords: "Zero Records",
+            EmptyTable: "Empty Table",
+            Search: "بحث",
+            Now: "الآن",
+            Copied: "Copied",
+            CopiedToClipboard: "Copied To Clipboard",
+            CopiedOneRow: "Copied One Row",
+            Rows: "الصفوف ",
+            Pages: "الصفحات",
+            Of: "من",
+            Icons: "الأيقونات",
+            Direction: "rtl",
+            DirectionName: "right",
+            AntiDirectionName: "left",
+            Create: "جديد",
+            ShowingPage: "صفحة العرض ",
+            NoData: "No Data",
+            AreYouSureToDelete: "Are You Sure Delete",
+            AreYouSureEditTitle: "Are You Sure Edit Title",
+            YouHaveUnsavedChangesMessage: "You Have Unsaved Changes",
+            AnErrorHasOccured: "Error Message",
+            Showing: "Showing",
+            EmptyCaptionMessage: "Empty Caption",
+            Page: "Page",
+            Yes: "نعم",
+            No: "كلا",
+            Next: "التالي",
+            Previous: "السابق",
+            Back: "رجوع",
+            Cancel: "إالغاء",
+            SiteName: "لوحة تحكم الأدمن",
+            UnderConstruction: "قيد البناء",
+            UnderConstructionMessage: "رسالة قيد البناء",
+            Select: 'تحديد',
+            RecordsPerPage: 'سطر في الصفحة',
+            MediaTypes: {
+                "10": "Image",
+                "20": "Audio",
+                "30": "Video",
+                "40": "Live",
+                "50": "File"
+            },
+            MediaTypesByKey: {
+                "image": "10",
+                "audio": "20",
+                "video": "30",
+                "live": "40",
+                "file": "50"
+            },
+            MediaTypesKeys: {
+                "10": "image",
+                "20": "audio",
+                "30": "video",
+                "40": "live",
+                "50": "file"
+            },
+            Statuses: {
+    '10' : 'New','20' : 'Published','30' : 'Unpublished','40' : 'Processing','45' : 'Waiting','50' : 'Processed','55' : 'Processed Failed','60' : 'Success','70' : 'Failed','90' : 'Active','100' : 'In Active','120' : 'Approved','130' : 'Rejected','140' : 'Reported','150' : 'Scheduled','410' : 'Gone','-200' : 'Blocked','-150' : 'Expired','-100' : 'Deleted',
+            },
+            WidgetDataSources: {
+    'posts': '10','html': '20','terms': '30','view': '40','currentterms': '50','currentuprelatives': '70','currentdownrelatives': '80','currentmedia': '90','currentchildren': '110','current': '120','ids': '130','currentlist': '140','menu': '150','advertisement': '200','enduserform': '220','schedule': '230','comments': '240','survey': '250','previouspost': '260',        }
+        };
+    </script>
+    
+        </head>
+    
+        <body class="no-skin rtl">
+    
+    
+    <div class="navbar fixed-top" id="navbar">
+        <div class="navbar-container" id="navbar-container" style="text-align: center">
+            <span id="headerloader" class="headericon" style="display: inline-block; height: 33px; margin-top: 7px; width: 33px;">
+                <i class=" fa fa-spinner fa-spin bigger-250 white"></i>
+            </span>
+    
+            
+    
+    <div class="navbar-header product-wrapper pull-right">
+        <a href="/"><img src="img/dxm.png" alt="Experience Manager" class="product-logo"/></a>
+    </div>
+    
+    <style>
+        :root {
+            --hilight-color: #90298e;
+            --hilight-color2: #90298e;
+        }
+    </style>
+            <div class="navbar-buttons navbar-header pull-left"
+         role="navigation">
+        <ul class="nav ace-nav">
+            <li>
+                
+    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+        <i class="fa fa-th"></i>
+    </a>
+    <ul class="dropdown-menu products-dropdown dropdown-menu-left dropdown-navbar">
+                <li class=" active">
+                        <a href="/" class="notajax"><img src="img/dxm.png" alt="Experience Manager" /></a>
+                </li>
+                <li class=" ">
+                        <a href="/Admin/AdminHome" class="notajax"><img src="img/admin.png" alt="Admin Panel" /></a>
+                </li>
+                <li class=" ">
+                        <a href="/Social/SocialHome" class="notajax"><img src="img/social.png" alt="Social" /></a>
+                </li>
+                <li class=" ">
+                        <a href="/Community/CommunityHome" class="notajax"><img src="img/community.png" alt="Community" /></a>
+                </li>
+                <li class=" ">
+                        <a href="/Assets/AssetsHome" class="notajax"><img src="img/assets.png" alt="Assets Manager" /></a>
+                </li>
+                <li class="disabled ">
+                        <a><img src="img/analytics.png" alt="Analytics" /></a>
+                </li>
+                <li class="disabled ">
+                        <a><img src="img/flix.png" alt="Flix" /></a>
+                </li>
+                <li class="disabled ">
+                        <a><img src="img/audience.png" alt="Audience Manager" /></a>
+                </li>
+                <li class="disabled ">
+                        <a><img src="img/campaign.png" alt="Campaign" /></a>
+                </li>
+                <li class="disabled ">
+                        <a><img src="img/target.png" alt="Target" /></a>
+                </li>
+    </ul>
+            </li>
+            <li>
+                
+    <a data-toggle="dropdown" class="dropdown-toggle user-options" href="#">
+            <i class="fa fa-user-circle"></i>
+    </a>
+    <ul class="dropdown-menu user-dropdown dropdown-menu-left">
+        <li class="account">
+            <a href="/Account/ChangePassword">
+                <i class="icon fa fa-key"></i>
+                &#x62A;&#x63A;&#x64A;&#x64A;&#x631; &#x643;&#x644;&#x645;&#x629; &#x627;&#x644;&#x633;&#x631;
+            </a>
+        </li>
+        <li class="account">
+            <a href="/Account/ChangeAvatar">
+                <i class="icon fa fa-key"></i>
+                &#x62A;&#x63A;&#x64A;&#x64A;&#x631; &#x627;&#x644;&#x635;&#x648;&#x631;&#x629;
+            </a>
+        </li>
+        <li class="account">
+            <a href="/Account/LogOff" class="notajax">
+                <i class="icon fa fa-power-off"></i>
+                &#x62A;&#x633;&#x62C;&#x64A;&#x644; &#x627;&#x644;&#x62E;&#x631;&#x648;&#x62C;
+            </a>
+        </li>
+        <li class="divider clearfix"></li>
+                <li class="lang active">
+                    <a href="/Account/ChangeLanguage?language=ar" class="clearfix notajax">
+                        &#x627;&#x644;&#x639;&#x631;&#x628;&#x64A;&#x629;
+                    </a>
+                </li>
+                <li class="lang ">
+                    <a href="/Account/ChangeLanguage?language=en" class="clearfix notajax">
+                        English
+                    </a>
+                </li>
+    </ul>
+    
+            </li>
+            <li class="client-wrapper">
+                    <a data-toggle="dropdown" class="dropdown-toggle">
+            <img src="" alt="MangoX" title="MangoX"/>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-left">
+                <li>
+                    <a href="/Technical/Subscription/Apply/7506d461-6ad2-4a07-9ff2-e86cf0442261" class="clearfix notajax">
+                        <img src="img/question.png" alt="MangoX" title="MangoX"/>
+                        <h5>MangoX</h5>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Technical/Subscription/Apply/cd81f9bf-09bb-4f5f-9e6b-b4aa97a4b465" class="clearfix notajax">
+                        <img src="img/logo.png" alt="1234" title="1234"/>
+                        <h5>1234</h5>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Technical/Subscription/Apply/3190d3cd-68e6-4205-be41-8c9ad8467941" class="clearfix notajax">
+                        <img src="img/logo.png" alt="abc" title="abc"/>
+                        <h5>abc</h5>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Technical/Subscription/Apply/be4a949d-96fe-47cc-9aa0-d389e2424010" class="clearfix notajax">
+                        <img src="img/logo.png" alt="MangoX-AR" title="MangoX-AR"/>
+                        <h5>MangoX-AR</h5>
+                    </a>
+                </li>
+    
+                <li>
+                    <a href="/Technical/Subscription" class="clearfix">
+                        <span class="msg-body">&#x627;&#x644;&#x62A;&#x62D;&#x643;&#x645; &#x628;&#x627;&#x644;&#x645;&#x648;&#x627;&#x642;&#x639;</span>
+                    </a>
+                </li>
+        </ul>
+    
+            </li>
+    
+        </ul>
+    </div>
+    
+        </div>
+    </div>            <div b-fjwotxpclx class="main-container" id="main-container">
+    <div class="sidebar " id="sidebar">
+        
+        <ul class="nav nav-list">
+            <li class="menuitem ">
+                <a class=" " href="/Publisher/Widget?id=c207053b-f61f-11ec-8c71-f079596794cc">
+                    <i class="menu-icon fas fa-images"></i>
+                    <span class='menu-text'>Slider</span>
+                </a>
+    
+            </li>
+            <li class="menuitem ">
+                <a class=" " href="/Posts/Index?type=article">
+                    <i class="menu-icon fa fa-far fa-newspaper"></i>
+                    <span class='menu-text'>Articles</span>
+                </a>
+    
+            </li>
+            <li class="menuitem ">
+                <a class=" " href="/Posts/Index?type=video">
+                    <i class="menu-icon fas fa-video"></i>
+                    <span class='menu-text'>Videos</span>
+                </a>
+    
+            </li>
+            <li class="menuitem ">
+                <a class=" " href="/Posts/Index?type=author">
+                    <i class="menu-icon fas fa-user-edit "></i>
+                    <span class='menu-text'>Author</span>
+                </a>
+    
+            </li>
+    </ul>
+    <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+        <i class="ace-icon fa fa-angle-double-right" data-icon1="ace-icon fa fa-angle-double-right" data-icon2="ace-icon fa fa-angle-double-left"></i>
+    </div>
+        <div class="technical-shortcuts">
+                <a class="notajax" href="/Home/Refresh" title="Refresh">
+                    <i class="ace-icon fa fa-sync-alt"></i>
+                </a>
+                <a class="notajax" href="/Manage/ManageHome" title="Tools & Setup">
+                    <i class="ace-icon fa fa-tools"></i>
+                </a>
+                <a class="notajax" href="/Technical/Configs" title="Configs">
+                    <i class="ace-icon fa fa-code"></i>
+                </a>
+    
+        </div>
+    </div>
+                    <div b-fjwotxpclx class="main-content">
+                        <div b-fjwotxpclx class="main-content-inner">
+    
+    
+    <div class="breadcrumbs" id="breadcrumbs">
+        <ul class="breadcrumb">
+            <li>
+                <i class="ace-icon fa fa-home home-icon">
+                </i>
+                <a href="/">
+                    &#x627;&#x644;&#x631;&#x626;&#x64A;&#x633;&#x64A;&#x629;
+                </a>
+            </li>
+        </ul>
+    
+        <div id="page-data" data-url="https://as-mangopulse-admin.azurewebsites.net/" data-title="">
+        </div>
+    </div>
+                            
+    <div class="welcome">
+        <h3>
+            &#x623;&#x647;&#x644;&#x627;&#x64B; &#x628;&#x643;&#x645;
+            Technical Support
+        </h3>
+    
+    </div>
+    
+    <div class="reload-btns">
+        <a class="btn btn-new info" href="/Home/ClearAPICache">&#x62A;&#x62D;&#x62F;&#x64A;&#x62B; &#x62A;&#x637;&#x628;&#x64A;&#x642;&#x627;&#x62A; &#x627;&#x644;&#x645;&#x648;&#x628;&#x627;&#x64A;&#x644;</a>
+        <a class="btn btn-new info" href="/Home/ClearWebsiteCache">&#x62A;&#x62D;&#x62F;&#x64A;&#x62B; &#x627;&#x644;&#x645;&#x648;&#x642;&#x639;</a>
+    </div>
+    <div class="page-content">
+            
+    
+        <div class="row">
+            <div class="col-12">
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    
+                            
+    
+    <div class="hidden"></div>
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="js/jquery-ui.js"></script>
+        <script type="text/javascript" src="js/popper.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/moment.js"></script>
+        <script type="text/javascript" src="js/bootstrap-datetimepicker.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap3-typeahead.js"></script>
+        <script type="text/javascript">
+            var JS_CONFIG = {
+                UploadServer: 'https://as-mangopulse-upload.azurewebsites.net/',
+                MediaServers: 'as-mangopulse-media.azurewebsites.net,samangopulse.blob.core.windows.net,as-mangopulse-media.azurewebsites.net,samangopulse.blob.core.windows.net',
+                CssDirection: 'rtl',
+                Direction: 'right',
+                AntiDirection: 'left',
+                ImageNotFound: '',
+                PageSize: '20',
+                SoundCloudToken: '',
+                YouTubeToken: 'AIzaSyA96fADiktdvU0TBonZFKiClaFbEdRWYaQ',
+                UploadToken: '11720fc6-2926-45ba-9080-1dfa55a7e1c5',
+                Colors: '',
+                OctividPlayerHost:'',
+                OctividApiHost: '',
+                Fullname: 'Technical Support',
+                Username: 'techsupport',
+                EmailAddress: 'support@octipulse.com',
+                WOEIDFile: ''
+            };
+        </script>
+        <script type="text/javascript" src="/Content/js/ko/knockout-3.2.0.js"></script>
+        <script type="text/javascript" src="/Content/js/ko/knockout.dirtyFlag.js"></script>
+        <script type="text/javascript" src="/Content/js/ko/knockout-sortable.js"></script>
+        <script type="text/javascript" src="/Content/js/ko/knockout.mapping.js"></script>
+        <script type="text/javascript" src="/Content/js/jquery/jquery.inputlimiter.1.3.1.js"></script>
+        <script type="text/javascript" src="/Content/js/jquery/jquery.autosize.js"></script>
+        <script type="text/javascript" src="/Content/js/jquery/jquery.colorbox.js"></script>
+        <script type="text/javascript" src="/Content/js/jquery/jquery.hotkeys.js"></script>
+        <script type="text/javascript" src="/Content/js/bootstrap/daterangepicker.js"></script>
+        <script type="text/javascript" src="/Content/js/hogan.js"></script>
+        <script type="text/javascript" src="/Content/js/jquery/jquery.pulsate.js"></script>
+        <script type="text/javascript" src="/Content/js/typeahead.js"></script>
+        <script type="text/javascript" src="/Content/js/bloodhound.js"></script>
+        <script type="text/javascript" src="/Content/js/bootstrap/bootstrap-tag.js"></script>
+        <script type="text/javascript" src="/Content/js/jquery/jquery.gritter.js"></script>
+        <script type="text/javascript" src="/Content/js/jquery/jquery-ui-1.10.3.custom.js"></script>
+        <script type="text/javascript" src="/Content/js/jquery/chosen.jquery.js"></script>
+        <script type="text/javascript" src="/Content/js/jquery/jquery.nestable.min.js"></script>
+        <script type="text/javascript" src="/Content/js/back.js"></script>
+        <script type="text/javascript" src="/Content/js/modules/asyncmodule.js"></script>
+        <script type="text/javascript" src="/Content/js/moment.js"></script>
+        <script type="text/javascript" src="/Content/js/bootstrap/bootstrap-wizard.js"></script>
+        <script type="text/javascript" src="/Content/js/media/jquery.Jcrop.js"></script>
+        <script type="text/javascript" src="/Content/js/media/resumableNew.js"></script>
+        <script type="text/javascript" src="/Content/js/media/resumable-uploader.js"></script>
+        <script type="text/javascript" src="/Content/js/media/cropimage.js"></script>
+        <script type="text/javascript" src="/Content/js/modules/media.js"></script>
+        <script type="text/javascript" src="/Content/js/modules/map.js"></script>
+        <script type="text/javascript" src="/Content/js/modules/postmodule.js"></script>
+        <script type="text/javascript" src="/Content/js/modules/facebookbotmodule.js"></script>
+        <script type="text/javascript" src="/Content/js/modules/channelmodule.js"></script>
+        <script type="text/javascript" src="/Content/js/modules/sortablemodule.js"></script>
+        <script type="text/javascript" src="/Content/js/modules/publisher.js"></script>
+        <script type="text/javascript" src="/Content/js/modules/tags.js"></script>
+        <script type="text/javascript" src="/Content/js/modules/search.js"></script>
+        <script type="text/javascript" src="/Content/js/modules/editor.js"></script>
+        <script type="text/javascript" src="/Content/js/modules/distractionFreeEditor.js"></script>
+        <script type="text/javascript" src="/Content/js/modules/json.js"></script>
+        <script type="text/javascript" src="/Content/js/modules/treeview.js"></script>
+        <script type="text/javascript" src="/Content/js/modules/paging.js"></script>
+        <script type="text/javascript" src="/Content/js/modules/linkedlist.js"></script>
+        <script type="text/javascript" src="/Content/js/ace/ace.js"></script>
+        <script type="text/javascript" src="/Content/js/ace/ace-elements.js"></script>
+        <script type="text/javascript" src="/Content/js/ace/ace-extra.js"></script>
+        <script type="text/javascript" src="/Content/js/ace/tree.min.js"></script>
+        <script type="text/javascript" src="/Content/js/ace/spinbox.min.js"></script>
+        <script type="text/javascript" src="/Content/js/jquery/jquery.maskedinput.min.js"></script>
+        <script type="text/javascript" src="/Content/js/jquery/php-date-formatter.min.js"></script>
+        <script type="text/javascript" src="/Content/js/jquery/jquery.mousewheel.js"></script>
+        <script type="text/javascript" src="/Content/js/jquery/jquery.datetimepicker.js"></script>
+        <script type="text/javascript" src="/Content/js/modules/widgetmodule.js"></script>
+        <script type="text/javascript" src="/Content/js/handlebars-v4.0.5.js"></script>
+        <script type="text/javascript" src="/Content/js/bootstrap/bootstrap-iconpicker.min.js"></script>
+        <script type="text/javascript" src="/Content/js/lib/vue/vue.js"></script>
+        <script src="https://cdn.tiny.cloud/1/5rkmfsc5r0w74veek23qeo6968hgllnk0020ocef4nluee22/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+        <script type="text/javascript" src="/Content/js/tinymce/plugins/advupload/plugin.js"></script>
+        <script> window.back.pages.googlemapLink = "https://maps.googleapis.com/maps/api/js?key=&v=3.exp&sensor=false&language=ar&async=2"; </script>
+        <script>addHeadScripts()</script>
+    <script>
+        $('button[type="submit"]').prop("disabled", false);
+        $('button[type="submit"]').removeAttr("disabled");
+    
+        var Referrer = '';
+        $(function() {
+            window.neweditormodule.setConfigs({"Editor":"tinymce","ApiKey":"5rkmfsc5r0w74veek23qeo6968hgllnk0020ocef4nluee22","EditorTheme":"silver","BodyClass":"","CustomCss":"","CustomStyle":"","Plugins":"advlist,advupload,autolink,charmap,code,directionality,fullscreen,help,hr,imagetools,insertdatetime,link,lists,media,paste,preview,searchreplace,table","MenuBarItems":"","Menu":{"file":{"title":"File","items":"newdocument restoredraft | preview | print+"},"edit":{"title":"Edit","items":"cut copy paste | selectall | searchreplace"},"view":{"title":"View","items":"code | preview"},"insert":{"title":"Insert","items":"advupload_image advupload_video media | link | hr |  anchor toc | insertdatetime"},"format":{"title":"Format","items":"bold italic underline strikethrough  | formats blockformats fontsizes align"},"tools":{"title":"Tools","items":"spellchecker spellcheckerlanguage | code wordcount"},"table":{"title":"Table","items":"inserttable tableprops deletetable row column cell"},"help":{"title":"Help","items":"help"}},"ContextMenu":"undo redo | showcomments deleteallconversations | charmap emoticons nonbreaking | code paste preview | searchreplace fullscreen help","InsertToolbar":"table | numlist bullist | advupload_image advupload_video media | charmap insertdatetime","SelectionToolbar":"removeformat bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | h3 h4 | blockquote quicklink","Toolbar":"removeformat undo redo | fullscreen code preview help | searchreplace | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | h3 h4  | advupload_image advupload_video media | blockquote table | numlist bullist| charmap hr insertdatetime","ImageToolsToolbar":"editimage | alignleft aligncenter alignright alignjustify","FontFormats":"","FontsSizes":"8pt 10pt 12pt 14pt 18pt 24pt 36pt","BlockFormats":"","PreviewStyles":"font-size,font-weight,text-decoration,text-transform","StyleFormats":[],"AllowHtml":true,"PasteAsPlainText":true,"EnableComments":false,"EnableCollaboration":false,"CollaborationApiKey":""});
+            window.back.currentController = "Home";
+            window.back.currentAction = "Index";
+            window.back.currentArea = "";
+            window.back.initialize();
+        });
+    </script>
+    
+    <input type="hidden" id="CurrentUserId" value="0b42217b-e575-49e3-8482-a37100cd76df" />
+    <input type="hidden" id="CurrentUsername" value="techsupport" />
+                            
+    
+                        </div>
+                        <span b-fjwotxpclx class="clearfix"></span>
+                    </div>
+                    <div b-fjwotxpclx class="hidden-content" style="display: none"></div>
+    <div class="footer">
+        <div class="footer-inner">
+            <div class="footer-content">
+                <span class="bigger-120">
+                    <span class="blue bold">&copy; </span>
+                </span>
+            </div>
+        </div>
+    </div>
+                    <div b-fjwotxpclx id="busy-holder">
+                        <div b-fjwotxpclx id="busy">
+                            <img b-fjwotxpclx src="img/loader.gif" />
+                        </div>
+                    </div>
+                </div>
+            <div b-fjwotxpclx id="message-modal" class="modal fade" tabindex='-1'>
+                <div b-fjwotxpclx class="modal-dialog">
+                    <div b-fjwotxpclx class="modal-content">
+                        <button b-fjwotxpclx type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span b-fjwotxpclx aria-hidden="true">×</span>
+                        </button>
+                        <div b-fjwotxpclx class="modal-body"></div>
+                        <div b-fjwotxpclx class="modal-footer"></div>
+                    </div>
+                </div>
+            </div>
+            <div b-fjwotxpclx id="default-modal" class="modal fade" tabindex='-1'>
+                <div b-fjwotxpclx class="modal-dialog">
+                    <div b-fjwotxpclx class="modal-content">
+                        <button b-fjwotxpclx type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span b-fjwotxpclx aria-hidden="true">×</span>
+                        </button>
+                        <div b-fjwotxpclx id="modal-wizard-container">
+                            <div b-fjwotxpclx class="modal-header">
+                                <h5 b-fjwotxpclx class="modal-title h4"></h5>
+    
+                            </div>
+    
+                            <div b-fjwotxpclx class="modal-body"></div>
+                        </div>
+                        <div b-fjwotxpclx class="modal-footer"></div>
+                    </div>
+                </div>
+            </div>
+            <div b-fjwotxpclx id="over-modal" class="modal fade" tabindex='-1'>
+                <div b-fjwotxpclx class="modal-dialog">
+                    <div b-fjwotxpclx class="modal-content">
+                        <button b-fjwotxpclx type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span b-fjwotxpclx aria-hidden="true">×</span>
+                        </button>
+                        <div b-fjwotxpclx id="modal-wizard-container">
+                            <div b-fjwotxpclx class="modal-header">
+                                <h5 b-fjwotxpclx class="modal-title h4"></h5>
+    
+                            </div>
+    
+                            <div b-fjwotxpclx class="modal-body"></div>
+                        </div>
+                        <div b-fjwotxpclx class="modal-footer"></div>
+                    </div>
+                </div>
+            </div>
+        </body>
+        </html>
+    
+    
