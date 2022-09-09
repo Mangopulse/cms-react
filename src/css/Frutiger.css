@@ -1,0 +1,43 @@
+@font-face {
+    font-family: "FrutigerLight";
+ 
+    src: 
+        
+         url(../webfonts/FrutigerLTW20-45Light.ttf) format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Frutiger";
+ 
+    src: 
+         url(../webfonts/FrutigerLTW20-55Roman.woff) format("woff"),
+         url(../webfonts/FrutigerLTW20-55Roman.ttf) format("truetype")
+        ;
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "FrutigerBold";
+
+    src:  url(../webfonts/FrutigerLTW2065Bold.ttf) format("truetype");
+        
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "FrutigerBlack";
+   
+    src: url(../webfonts/FrutigerLTW20-75Black.ttf) format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+body {
+    font-family: 'Frutiger',Tahoma,Helvetica,Arial,sans-serif;
+}
+h1, h2, h3, h4, h5 {
+    font-family: FrutigerBlack,Tahoma,Helvetica,Arial,sans-serif;
+}
