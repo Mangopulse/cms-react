@@ -10,11 +10,7 @@ const AlnasherBusiness = () => {
     <div className="sidebar" id="sidebar">
       <VerticalNavbar />
       <div className="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
-        <i
-          className="ace-icon fa fa-angle-double-right"
-          data-icon1="ace-icon fa fa-angle-double-right"
-          data-icon2="ace-icon fa fa-angle-double-left"
-        ></i>
+       
       </div>
       <div className="technical-shortcuts">
         <a className="notajax" href="/Home/Refresh" title="Refresh">

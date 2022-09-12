@@ -5,6 +5,7 @@ import HorizantalNavbar from './HorizantalNavbar';
 import VerticalNavbar from './VerticalNavbar';
 import {authorHeader, mininavbar, author} from '../dummydata';
 import Published from './AuthorsTakseem/Published';
+import JadwalArticles from './JadwalArticles';
 const AuthorsPage = () => {
 
   const [click, setClick] = useState(false);
@@ -105,7 +106,10 @@ const AuthorsPage = () => {
 
                 <label className="btn btn-new" title="عرض جدول">
                   <input type="radio" value="grid" />
+                  <Link
+                  to="/JadwalArticles">
                   <i className={val.grid_icon}></i>
+                  </Link>
                 </label>
               </div>
             </div>

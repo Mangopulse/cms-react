@@ -1,7 +1,8 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import Tabs from "./Tabs"
 import HorizantalNavbar from '../HorizantalNavbar'
 import VerticalNavbar from '../VerticalNavbar'
-import TakseemHeader from './TakseemHeader'
 const Published = () => {
   return (
     <div className="no-skin rtl make-rtl">
@@ -56,11 +57,11 @@ const Published = () => {
                 ><i className="ace-icon fa fa-sync"></i> تحديث
               </a>
               <div className="pull-left">
-                <a
-                  href="/Posts?type=author"
+                <Link
+                  to="/AuthorsPage"
                   className="btn btn-new pink btn-all-author"
                   ><i className="ace-icon fa fa-list"></i> الكل
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -69,192 +70,7 @@ const Published = () => {
             <div className="row">
               <div className="col-12">
                 <div className="tabbable">
-                 <TakseemHeader />
-
-                  <div className="tab-content">
-                    <div className="tab-pane fade in active show">
-                      <div
-                        className="data-table"
-                        data-size="20"
-                        data-moreurl="/Posts?MainRequest=False&amp;type=author&amp;Status=20"
-                      >
-                        <table className="table">
-                          <thead>
-                            <tr>
-                              <th>عنوان</th>
-
-                              <th>الحالة</th>
-                              <th></th>
-                            </tr>
-                          </thead>
-
-                          <tbody>
-                            <tr className="clickable-row" data-modelid="59">
-                              <td className="cell-main">
-                                <a href="/Posts/author/Preview/59">
-                                  <img
-                                    data-src="https://as-mangopulse-media.azurewebsites.net/store/archive/image/2022/7/1/7922cb26-d061-43e8-ac90-8258ab12d97b.jpg"
-                                    src="https://as-mangopulse-media.azurewebsites.net/store/archive/image/2022/7/1/7922cb26-d061-43e8-ac90-8258ab12d97b.jpg?preset=table-thumb"
-                                    className="placeholder"
-                                  />
-                                </a>
-                                <div className="cell-data">
-                                  <a
-                                    href="/Posts/author/Preview/59"
-                                    className="cell-title"
-                                    >Clark Jones
-                                  </a>
-                                  <div className="text posts-users table-metas">
-                                    <div className="posts-mod entry">
-                                      آخر تعديل بواسطة techsupport في 1 July
-                                      06:40
-                                    </div>
-
-                                    <span className="clearfix"></span>
-                                  </div>
-                                  <div className="text posts-media">
-                                    <a
-                                      href="/Posts/GenerateLinks/470fdf05-f07d-11ec-9860-30d16bee5962"
-                                      ><i className="fa fa-anchor"></i
-                                    ></a>
-                                    <a
-                                      href="/Assets/Edit/Media/a2661777-f908-11ec-a81d-000d3aa9ccac?type=image"
-                                    >
-                                      <i
-                                        className="purple fa fa-file-image"
-                                        title="cover (Image)"
-                                      ></i>
-                                    </a>
-                                  </div>
-                                </div>
-                              </td>
-
-                              <td className="cell-status">
-                                <span className="label label-success"
-                                  ><i
-                                    className="ace-icon fa fa-check bigger-120"
-                                  ></i>
-                                  Published</span
-                                >
-                              </td>
-                              <td className="cell-actions">
-                                <div className="action-buttons">
-                                  <a
-                                    href="/Posts/author/Edit/59"
-                                    className="btn btn-new info"
-                                    ><i className="ace-icon fa fa-edit"></i> تعديل
-                                  </a>
-
-                                  <a
-                                    href="/Social/Publish/Share?postid=470fdf05-f07d-11ec-9860-30d16bee5962"
-                                    className="btn btn-new pink"
-                                    ><i className="ace-icon fa fa-share-alt"></i>
-                                    نشر
-                                  </a>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr className="clickable-row" data-modelid="58">
-                              <td className="cell-main">
-                                <a href="/Posts/author/Preview/58">
-                                  <img
-                                    data-src="https://as-mangopulse-media.azurewebsites.net/store/archive/image/2022/7/1/4bd0ecc2-0c46-4648-b0f0-1f13249a33c9.jpg"
-                                    src="https://as-mangopulse-media.azurewebsites.net/store/archive/image/2022/7/1/4bd0ecc2-0c46-4648-b0f0-1f13249a33c9.jpg?preset=table-thumb"
-                                    className="placeholder"
-                                  />
-                                </a>
-                                <div className="cell-data">
-                                  <a
-                                    href="/Posts/author/Preview/58"
-                                    className="cell-title"
-                                    >John Smith
-                                  </a>
-                                  <div className="text posts-users table-metas">
-                                    <div className="posts-mod entry">
-                                      آخر تعديل بواسطة techsupport في 1 July
-                                      06:40
-                                    </div>
-
-                                    <span className="clearfix"></span>
-                                  </div>
-                                  <div className="text posts-media">
-                                    <a
-                                      href="/Posts/GenerateLinks/19bed437-f07d-11ec-9860-30d16bee5962"
-                                      ><i className="fa fa-anchor"></i
-                                    ></a>
-                                    <a
-                                      href="/Assets/Edit/Media/bdc5ad31-f908-11ec-a81d-000d3aa9ccac?type=image"
-                                    >
-                                      <i
-                                        className="purple fa fa-file-image"
-                                        title="cover (Image)"
-                                      ></i>
-                                    </a>
-                                  </div>
-                                </div>
-                              </td>
-
-                              <td className="cell-status">
-                                <span className="label label-success"
-                                  ><i
-                                    className="ace-icon fa fa-check bigger-120"
-                                  ></i>
-                                  Published</span
-                                >
-                              </td>
-                              <td className="cell-actions">
-                                <div className="action-buttons">
-                                  <a
-                                    href="/Posts/author/Edit/58"
-                                    className="btn btn-new info"
-                                    ><i className="ace-icon fa fa-edit"></i> تعديل
-                                  </a>
-
-                                  <a
-                                    href="/Social/Publish/Share?postid=19bed437-f07d-11ec-9860-30d16bee5962"
-                                    className="btn btn-new pink"
-                                    ><i className="ace-icon fa fa-share-alt"></i>
-                                    نشر
-                                  </a>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <div className="paging-wrapper">
-                        <div className="p-block">
-                          <input
-                            type="number"
-                            className="size-input"
-                            max="100"
-                            min="10"
-                            step="10"
-                            data-bind="value: size, event:{ change: changesize}"
-                          />سطر في الصفحة
-                        </div>
-                        <div className="p-block"><span className="from-to"></span></div>
-                        <div className="p-block">
-                          <div className="input-group">
-                            <span
-                              className="input-group-addon"
-                              data-bind="click: previous"
-                              ><i className="fa fa-chevron-right"></i></span
-                            ><input
-                              type="text"
-                              className="form-control page-input"
-                              data-bind="value: fetchingPage, event:{ change: changepage}"
-                            /><span
-                              className="input-group-addon"
-                              data-bind="click: next"
-                              ><i className="fa fa-chevron-left"></i
-                            ></span>
-                          </div>
-                        </div>
-                        <span className="clearfix"></span>
-                      </div>
-                    </div>
-                  </div>
+                 <Tabs />
                 </div>
                 <span className="clearfix"></span>
               </div>

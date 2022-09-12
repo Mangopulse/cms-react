@@ -14,15 +14,14 @@ import NasherArticles from './components/NasherArticles';
 import HorizantalNavbar from './components/HorizantalNavbar';
 import EntertaimentArticles from './components/alnasherArticles/EntertaimentArticles';
 import AlnasherSportsArticle from './components/alnasherArticles/AlnasherSportsArticle';
-import AlnasherTableHeader from './components/alnasherArticles/AlnasherTableHeader';
 import AlnasherPolitics from './components/alnasherArticles/AlnasherPolitics';
 import AlnasherFashion from './components/alnasherArticles/AlnasherFashion';
 import AlnasherSports from './components/alnasherArticles/AlnasherSports';
 import AlnasherTech from './components/alnasherArticles/AlnasherTech';
 import AlnasherBusiness from './components/alnasherArticles/AlnasherBusiness';
 import AlnasherAuthors from './components/alnasherAuthors/AlnasherAuthors';
-import TakseemHeader from './components/AuthorsTakseem/TakseemHeader';
 import Published from './components/AuthorsTakseem/Published';
+
 const ComponentsRoutes = () => {
 
   return (
@@ -48,8 +47,9 @@ const ComponentsRoutes = () => {
         <Route element={<AlnasherTech/>} exact path='/AlnasherTech'/>
         <Route element={<AlnasherBusiness/>} exact path='/AlnasherBusiness'/>
         <Route element={<AlnasherAuthors/>} exact path='/AlnasherAuthors'/>
+      
         <Route element={<Published/>} exact path='/Published'/>
-        <Route element={<TakseemHeader/>} exact path='/TakseemHeader'/>
+        
       </Routes> 
    
   

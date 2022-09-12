@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import DropDown from "./DropDown";
+import Tabs from "./components/AuthorsTakseem/Tabs"
 import ComponentsRoutes from './ComponentRoutes';
 import Published from './components/AuthorsTakseem/Published';
 import { useState } from 'react';
@@ -46,6 +46,7 @@ function App() {
       }
     }
   return (
+   
   
     <div>
   

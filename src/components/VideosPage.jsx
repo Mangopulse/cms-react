@@ -5,9 +5,8 @@ import HorizantalNavbar from './HorizantalNavbar';
 import image1 from "../components/images/dxm.png";
 import VerticalNavbar from './VerticalNavbar';
 import { mininavbar, videoHeader, videos, videosIcons } from '../dummydata';
-
-
-
+import Published from './AuthorsTakseem/Published';
+import JadwalArticles from './JadwalArticles';
 
 const VideosPage = () => {
 
@@ -89,16 +88,16 @@ const VideosPage = () => {
               </div> */}
               {mininavbar.map((val) => (
               <div className="page-operations">
-              <a
-                href="/Publisher?type=author"
+              <Link
+                to="/Published"
                 className="btn btn-new link btn-publihser-author"
                 ><i className={val.alnasher_icon}></i> {val.alnasher}
-              </a>
-              <a
-                href="/Posts/Tabs?type=author"
+              </Link>
+              <Link
+                to="/Published"
                 className="btn btn-new link btn-tabs-author"
                 ><i className={val.takseem_icon}></i>{val.takseem}
-              </a>
+              </Link>
               <div
                 data-toggle="buttons"
                 className="btn-group btn-overlap view-switcher"
@@ -110,7 +109,11 @@ const VideosPage = () => {
 
                 <label className="btn btn-new" title="عرض جدول">
                   <input type="radio" value="grid" />
+                  <Link 
+                  to="/JadwalArticles"
+                  >
                   <i className={val.grid_icon}></i>
+                  </Link>
                 </label>
               </div>
             </div>
