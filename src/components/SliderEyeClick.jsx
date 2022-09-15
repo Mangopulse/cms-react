@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom'
 const SliderEyeClick = () => {
   return (
     <div className="no-skin rtl make-rtl">
@@ -283,7 +283,7 @@ const SliderEyeClick = () => {
           <ul className="breadcrumb">
             <li>
               <i className="ace-icon fa fa-home home-icon"> </i>
-              <a href="/"> الرئيسية </a>
+              <Link to="/"> الرئيسية </Link>
             </li>
             <li>
               <a

@@ -31,7 +31,7 @@ const Published = () => {
           <ul className="breadcrumb">
             <li>
               <i className="ace-icon fa fa-home home-icon"> </i>
-              <a href="/"> الرئيسية </a>
+              <Link to="/"> الرئيسية </Link>
             </li>
             <li>
               <a href="/Posts?type=author"> Author </a>
@@ -53,9 +53,12 @@ const Published = () => {
             </div>
             <h1>Author</h1>
             <div className="page-operations">
-              <a href="/Posts/Tabs?type=author" className="btn btn-new info"
-                ><i className="ace-icon fa fa-sync"></i> تحديث
-              </a>
+              <Link 
+              to="/Update" 
+              className="btn btn-new info"
+              >
+              <i className="ace-icon fa fa-sync"></i> تحديث
+              </Link>
               <div className="pull-left">
                 <Link
                   to="/AuthorsPage"

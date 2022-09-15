@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Tabs from "./components/AuthorsTakseem/Tabs"
+import AlnasherTabs from "./components/alnasherArticles/AlnasherTabs"
 import ComponentsRoutes from './ComponentRoutes';
 import Published from './components/AuthorsTakseem/Published';
 import { useState } from 'react';
@@ -101,8 +101,9 @@ function App() {
               name="RememberMe"
               checked=""
               value="true"
+           
             />
-            <label className="custom-control-label" for="RememberMe">
+            <label className="custom-control-label" for="RememberMe" >
             Remember Me
             </label>
           </div>

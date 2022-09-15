@@ -1,5 +1,6 @@
 import HorizantalNavbar from "../HorizantalNavbar";
 import VerticalNavbar from "../VerticalNavbar";
+import { Link } from "react-router-dom";
 import React from 'react'
 
 const AlnasherAuthors = () => {
@@ -30,7 +31,7 @@ const AlnasherAuthors = () => {
           <ul className="breadcrumb">
             <li>
               <i className="ace-icon fa fa-home home-icon"> </i>
-              <a href="/"> الرئيسية </a>
+              <Link to="/"> الرئيسية </Link>
             </li>
             <li className="active">الناشر</li>
             <li>
@@ -60,9 +61,11 @@ const AlnasherAuthors = () => {
                 </small>
               </h1>
               <div className="page-operations">
-                <button type="submit" className="btn btn-new success">
+                <Link
+                 to="/Save" 
+                 className="btn btn-new success">
                   <i className="ace-icon fa fa-save"></i> حفظ
-                </button>
+                </Link>
               </div>
             </div>
 

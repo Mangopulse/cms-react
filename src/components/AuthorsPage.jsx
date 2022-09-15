@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import HorizantalNavbar from './HorizantalNavbar';
 import VerticalNavbar from './VerticalNavbar';
-import {authorHeader, mininavbar, author} from '../dummydata';
+import {authorHeader, mininavbar, author, HomeNavbar} from '../dummydata';
 import Published from './AuthorsTakseem/Published';
 import JadwalArticles from './JadwalArticles';
 const AuthorsPage = () => {
@@ -36,16 +36,18 @@ const AuthorsPage = () => {
         <div className="breadcrumbs" id="breadcrumbs">
           <ul className="breadcrumb">
             <li>
+              {HomeNavbar.map((val)=>(
               <Link 
               to="/"
               onClick={closeMobileMenu} > 
-              <i className="ace-icon fa fa-home home-icon"> </i>
-              الرئيسية 
+              <i className={val.home_icon}> </i>
+              {val.main} 
               </Link>
+              ))}
             </li>
             <li>
               <Link
-              to="/authorspage"
+              to="/AuthorsPage"
               onClick={closeMobileMenu} >
               Author 
               </Link>
@@ -63,12 +65,12 @@ const AuthorsPage = () => {
         {authorHeader.map((val) => (
           <div className="page-header">
             <div className="quick-create">
-              <a href="/Posts/Create?type=author" title="">
+              <Link to="/Add" title="">
               <i className={val.author_icon}></i
                 >
-              </a>
+              </Link>
             </div>
-            <h1>Author</h1>
+            <h1>{val.author_title}</h1>
             {/* <div id="bulk-actions">
               <a data-href="/Posts/MultiplePublish" className="btn btn-new success"
                 ><i className="fa fa-check"></i>نشر</a
@@ -99,10 +101,12 @@ const AuthorsPage = () => {
                 data-toggle="buttons"
                 className="btn-group btn-overlap view-switcher"
               >
-                <label className="btn btn-new active" title="لائحة">
+                <Link 
+                className="btn btn-new active" 
+                to="/AuthorsPage">
                   <input type="radio" value="list" checked="checked" />
                   <i className={val.list_icon}></i>
-                </label>
+                </Link>
 
                 <label className="btn btn-new" title="عرض جدول">
                   <input type="radio" value="grid" />
@@ -206,19 +210,19 @@ const AuthorsPage = () => {
                       </td>
                       <td className="cell-actions">
                         <div className="action-buttons">
-                          <a
-                            href="/Posts/author/Edit/59"
+                          <Link
+                            to="/Edited"
                             className="btn btn-new info"
                             ><i className={val.edit_button_icon}></i> 
                             {val.edit_button}
-                          </a>
+                          </Link>
 
-                          <a
-                            href="/Social/Publish/Share?postid=470fdf05-f07d-11ec-9860-30d16bee5962"
+                          <Link
+                            to="/NasherArticles"
                             className="btn btn-new pink"
                             ><i className={val.share_button_icon}></i> 
                             {val.share_button}
-                          </a>
+                          </Link>
                         </div>
                       </td>
                     </tr>
@@ -247,8 +251,7 @@ const AuthorsPage = () => {
                       className="form-control page-input"
                       data-bind="value: fetchingPage, event:{ change: changepage}"
                     /><span className="input-group-addon" data-bind="click: next"
-                      ><i className="fa fa-chevron-left"></i
-                    ></span>
+                      ><i className="fa fa-chevron-left"></i></span>
                   </div>
                 </div>
                 <span className="clearfix"></span>

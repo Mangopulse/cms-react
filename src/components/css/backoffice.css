@@ -910,6 +910,9 @@ a {
 .data-table.grid .posts-media, .data-table.grid .cell-info {
     display: none;
 }
+.client-wrapper .dropdown-toggle img, .client-wrapper a img {
+    width:120px !important;
+}
 
 .data-table.grid .cell-title {
     margin-top: 10px;

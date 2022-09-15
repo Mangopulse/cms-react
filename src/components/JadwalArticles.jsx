@@ -31,7 +31,7 @@ const JadwalArticles = () => {
           <ul className="breadcrumb">
             <li>
               <i className="ace-icon fa fa-home home-icon"> </i>
-              <a href="/"> الرئيسية </a>
+              <Link to="/"> الرئيسية </Link>
             </li>
             <li>
               <a href="/Posts?type=article"> Article </a>
@@ -73,7 +73,7 @@ const JadwalArticles = () => {
     <i className="ace-icon fa fa-sliders-h"></i>
      الناشر </Link> 
               <Link 
-     to="/TakseemArticles" 
+     to="/AlnasherArticles" 
      className="btn btn-new link btn-tabs-article">
         <i className="ace-icon fa fa-sitemap"></i>
          تقسيم 
@@ -82,10 +82,12 @@ const JadwalArticles = () => {
                 data-toggle="buttons"
                 className="btn-group btn-overlap view-switcher"
               >
-                <label className="btn btn-new" title="لائحة">
+                <Link 
+                className="btn btn-new" 
+                to="/ArticlesPage">
                   <input type="radio" value="list" checked="checked" />
                   <i className="icon-only ace-icon fa fa-list"></i>
-                </label>
+                </Link>
                 <Link
     to="/JadwalArticles" 
     className="btn btn-new" 

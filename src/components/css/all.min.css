@@ -4880,7 +4880,10 @@
 .fa-th:before {
     
     color:#6f687a !important;
-    content: "\f00a",
+    content: "\f00a";
+    font-size: 30px !important;
+    padding: 15px !important;
+
 }
 
 .fa-th-large:before {
@@ -5221,8 +5224,9 @@
 
 .fa-user-circle:before {
     content: "\f2bd";
- 
-    color:#6f687a !important
+    font-size: 30px !important;
+    color:#6f687a !important;
+    padding:15px !important;
 }
 
 .fa-user-clock:before {

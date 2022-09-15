@@ -9,6 +9,7 @@ import image9 from "../components/images/1c77ef95-5271-4cfe-aa4a-f4c38ec7aafb.jp
 import { slider, sliderNavigation} from "../dummydata";
 import VerticalNavbar from './VerticalNavbar';
 
+
 const SliderPage = () => {
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
@@ -64,21 +65,26 @@ const SliderPage = () => {
                 <div className="page-header">
                   <h1>{val.slider_title}</h1>
                   <div className="page-operations">
-                    <button type="submit" className="btn btn-new success">
-                     {val.save_icon} {val.save}{" "}
-                    </button>
-                    <a
-                      href="/Manage/Widgets/FullEdit/c207053b-f61f-11ec-8c71-f079596794cc"
+                    <Link 
+                    to="/Save" 
+                    className="btn btn-new success">
+                     <i className={val.save_icon}></i>
+                     {val.save}{" "}
+                    </Link>
+                    <Link
+                      to="/Edit"
                       className="btn btn-new info"
                     >
-                      {val.edit_icon} {val.edit}{" "}
-                    </a>{" "}
-                    <a
-                      href="/Widgets/UnPublish/c207053b-f61f-11ec-8c71-f079596794cc"
+                    <i className={val.edit_icon}></i>
+                       {val.edit}{" "}
+                    </Link>{" "}
+                    <Link
+                      to="/DeletePublish"
                       className="btn btn-new warning"
                     >
-                      {val.delete_nasher_icon}{val.delete_nasher}{" "}
-                    </a>{" "}
+                     <i className={val.delete_nasher_icon}></i>
+                      {val.delete_nasher}{" "}
+                    </Link>{" "}
                   </div>
                 </div>
               ))}
@@ -112,7 +118,7 @@ const SliderPage = () => {
                                   height: "auto",
                                 }}
                                 data-bind="attr{src: CoverImage ? '//' + addParameter(CoverImage.MediaUrl, 'width', '250') : JS_CONFIG.ImageNotFound + '?width=250'}"
-                                src={image7}
+                                src={val.image}
                               />
                               <div
                                 className="boldclassName"
@@ -159,7 +165,7 @@ const SliderPage = () => {
                               <span className="make-rtl">
                                 <span data-bind="html: StatusLabel">
                                   <span className="label label-success">
-                                   {val.button_icon}{" "}
+                                  <i className={val.button_icon}></i>
                                     {val.button}
                                   </span>
                                 </span>
@@ -171,14 +177,14 @@ const SliderPage = () => {
                                 className="purple"
                                
                               >
-                               {val.eye_icon}
+                                <i className={val.eye_icon}></i>
                               </Link>
                               <a
                                 href="#"
                                 className="red"
                                 data-bind="click:$parent.removeResult"
                               >
-                                {val.times_icon}
+                                <i className={val.times_icon}></i>
                               </a>
                             </div>
                           </div>

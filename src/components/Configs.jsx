@@ -268,7 +268,7 @@ const Configs = () => {
             <ul className="breadcrumb">
               <li>
                 <i className="ace-icon fa fa-home home-icon"> </i>
-                <a href="/"> الرئيسية </a>
+                <Link to="/"> الرئيسية </Link>
               </li>
               <li>
                 <a href="/Technical/technicalHome"> Programmers Area </a>
