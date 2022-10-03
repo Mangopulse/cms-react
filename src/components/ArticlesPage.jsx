@@ -183,12 +183,12 @@ const ArticlesPage = () => {
                                   />
                                 </a>
                                 <div className="cell-data">
-                                  <a
-                                    href="/Posts/article/Preview/1231"
+                                  <Link
+                                    to="/NewsLinks"
                                     className="cell-title"
                                   >
                                     {val.title}{" "}
-                                  </a>
+                                  </Link>
                                   <div className="text posts-users table-metas">
                                     <div className="posts-mod entry">
                                       {val.date}

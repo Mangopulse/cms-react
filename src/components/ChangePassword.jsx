@@ -1,20 +1,19 @@
 import React from 'react'
-import HorizantalNavbar from '../HorizantalNavbar'
-import VerticalNavbar from '../VerticalNavbar'
-import Tabs from "./Tabs"
-
+import HorizantalNavbar from './HorizantalNavbar'
+import VerticalNavbar from './VerticalNavbar'
+import { HomeNavbar } from '../dummydata'
 import { Link } from 'react-router-dom'
-const Edited = () => {
+const ChangePassword = () => {
   return (
     <div className="no-skin rtl make-rtl">
     <div className="navbar fixed-top" id="navbar">
-       <HorizantalNavbar />
+      <HorizantalNavbar />
     </div>
     <div b-fjwotxpclx="" className="main-container" id="main-container">
       <div className="sidebar" id="sidebar">
-        <VerticalNavbar />
+       <VerticalNavbar />
         <div className="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
-        
+         
         </div>
         <div className="technical-shortcuts">
           <a className="notajax" href="/Home/Refresh" title="Refresh">
@@ -32,135 +31,128 @@ const Edited = () => {
         <div b-fjwotxpclx="" className="main-content-inner">
           <div className="breadcrumbs" id="breadcrumbs">
             <ul className="breadcrumb">
-              <li>
-                <i className="ace-icon fa fa-home home-icon"> </i>
-                <a href="/"> الرئيسية </a>
-              </li>
-              <li>
-                <a href="/Posts/author/Preview/58"> John Smith </a>
-              </li>
-              <li>
-                <a href="/Posts?type=article"> Article </a>
-              </li>
-              <li>
-                <a href="/Posts?type=article&amp;term=sports"> Sports </a>
-              </li>
-              <li className="active">Lebanon to the basketball world cup</li>
+            {HomeNavbar.map((val) => (
+                      <li>
+                        <i className={val.home_icon}></i>
+                        <Link to="/">{val.main}</Link>
+                      </li>
+                    ))}
+              <li className="active">تغيير كلمة السر</li>
             </ul>
   
             <div
               id="page-data"
-              data-url="https://as-mangopulse-admin.azurewebsites.net/Posts/article/Edit/1332"
-              data-title="Sports - Lebanon to the basketball world cup"
+              data-url="https://as-mangopulse-admin.azurewebsites.net/Account/ChangePassword"
+              data-title="تغيير كلمة السر"
             ></div>
           </div>
-  
-          <div className="page-content">
-            <form
-              action="/Posts/Save"
-              className="form-horizontal"
-              id="posteditform"
-              method="post"
-            >
+          <form
+            action="/Account/UpdatePassword"
+            className="form-horizontal"
+            id="user-form"
+            method="post"
+          >
+            <div className="page-content">
               <div className="page-header">
-                <div className="pull-left language-buttons">
-                  <div className="btn-toolbar inline middle no-margin">
-                    <div data-toggle="buttons" className="btn-group no-margin">
-                      <label className="btn btn-sm btn-yellow active">
-                        <span className="bigger-110">en</span>
-                        <input type="radio" value="en" />
-                      </label>
-                      <label className="btn btn-sm btn-yellow">
-                        <span className="bigger-110">ar</span>
-                        <input type="radio" value="ar" />
-                      </label>
-                    </div>
-                  </div>
-                </div>
-  
-                <h1>News</h1>
+                <h1>تغيير كلمة السر</h1>
                 <div className="page-operations">
-                  <Link
-                  to="/Save"
-                   type="submit" className="btn btn-new success">
+                  <button type="submit" className="btn btn-new success">
                     <i className="ace-icon fa fa-save"></i> حفظ
-                  </Link>
-                  <a  className="btn btn-new purple"
-                    ><i className="ace-icon fa fa-eye"></i> معاينة
-                  </a>
-                  <a
-                    href="https://as-mangopulse-front.azurewebsites.net/Preview/1332"
-                    className="btn btn-new pink"
-                    target="_blank"
-                  >
-                    <i className="fa fa-external-link-alt"></i>
-                    الموقع
-                  </a>
-                  <a
-                    
-                    className="btn btn-new grey"
-                    ><i className="ace-icon fa fa-times"></i> رجوع
-                  </a>
-                  <div className="btn-group">
-                    <button
-                      data-toggle="dropdown"
-                      className="btn btn-new dropdown-toggle"
-                      aria-expanded="false"
-                    >
-                      <span className="ace-icon fa fa-caret-down icon-only"></span>
-                    </button>
-                    <ul className="dropdown-menu-left dropdown-menu">
-                      <li>
-                        <a
-                         
-                          className="btn btn-new warning"
-                          ><i className="ace-icon fa fa-times"></i> إلغاء نشر
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="/Posts/article/AdvancedEdit/1332"
-                          className="btn btn-new info"
-                          ><i className="ace-icon fa fa-user-edit"></i> تعديل متقدم
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="/Manage/Designer/Build/1332"
-                          className="btn btn-new pink"
-                          ><i className="ace-icon fa fa-palette"></i> التصميم
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="/Posts/article/Details/1332"
-                          className="btn btn-new purple"
-                          ><i className="ace-icon fa fa-info"></i> التفاصيل
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="/Posts/article/History/1332"
-                          className="btn btn-new info"
-                          ><i className="ace-icon fa fa-history"></i> السجل
-                        </a>
-                      </li>
-                    </ul>
+                  </button>
+                </div>
+              </div>
+  
+              <div className="row">
+                <div className="col-12">
+                  <div className="form-content">
+                    <div className="form-group">
+                      <label className="control-label col-sm-2">إسم المستخدم</label>
+                      <div className="col-sm-10">techsupport</div>
+                    </div>
+                    <div className="form-group">
+                      <label className="control-label col-sm-2"
+                        >كلمة السر الخاصة بك</label
+                      >
+                      <div className="col-sm-2">
+                        <input
+                          className="col-12"
+                          id="OldPassword"
+                          name="OldPassword"
+                          type="password"
+                        />
+                      </div>
+                    </div>
+  
+                    <div className="form-group">
+                      <label className="control-label col-sm-2"
+                        >كلمة السر الجديدة</label
+                      >
+                      <div className="col-sm-2">
+                        <span>
+                          <input
+                            className="col-12"
+                            data-val="true"
+                            data-val-required="The NewPassword field is required."
+                            id="NewPassword"
+                            name="NewPassword"
+                            type="password"
+                          />
+                        </span>
+                      </div>
+                      <div className="col-sm-2">
+                        <div id="pswd_info" position="absolute" z-index="+1">
+                          <ul>
+                            <li id="check" data-regex="2Pwds_equal" className="valid">
+                              PasswordsMatch
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="form-group">
+                      <label className="control-label col-sm-2"
+                        >تأكيد كلمة السر</label
+                      >
+                      <div className="col-sm-2">
+                        <input
+                          className="col-12"
+                          data-val="true"
+                          data-val-equalto="The new password and confirmation password do not match."
+                          data-val-equalto-other="*.NewPassword"
+                          id="ConfirmNewPassword"
+                          name="ConfirmNewPassword"
+                          type="password"
+                        />
+                      </div>
+                    </div>
+  
+                    <input
+                      data-val="true"
+                      data-val-required="The UserId field is required."
+                      id="UserId"
+                      name="UserId"
+                      type="hidden"
+                      value="0b42217b-e575-49e3-8482-a37100cd76df"
+                    />
+                    <input
+                      id="UserName"
+                      name="UserName"
+                      type="hidden"
+                      value="techsupport"
+                    />
                   </div>
                 </div>
               </div>
-              <Tabs />
-              <input
-                name="__RequestVerificationToken"
-                type="hidden"
-                value="CfDJ8Gw4EJhP_tFBqoXBSpM7LZ2ANPlt_cGWMOg0MgRJqcpPGVeLJZTTYaxz8ZrUokaz2DrjTsc76umPM54Zmy0V7jUqQIvtB4OpkpfzRjS6r_d_AZVaITdxeyxbXiB2cbmtlY94mALSJxbDwcCiIxj9FT_t3elbpn4zCSw2C4RVYL8tbZrMPT68Xlz5LNOa-X-SJg"
-              />
-            </form>
-          </div>
+            </div>
+            <input
+              name="__RequestVerificationToken"
+              type="hidden"
+              value="CfDJ8Gw4EJhP_tFBqoXBSpM7LZ0ywOCt0hoPCbHV56vm_p_WLHBOF_RaicwLOZE2NB3WD7AwfRCDRoJPbxCvjwVls_iBPVyO3DuwW8okWZgWRLr2DSrzR649YUWeyasYe07oQBC0gZiOie8DnugF4YPWpjyvL5N5xLNdg22SXQxC6yvtrgFh5A51vBOrM3KyZgwZpw"
+            />
+          </form>
   
           <div className="hidden"></div>
-    
-   
+       
   
           <input
             type="hidden"
@@ -168,9 +160,7 @@ const Edited = () => {
             value="0b42217b-e575-49e3-8482-a37100cd76df"
           />
           <input type="hidden" id="CurrentUsername" value="techsupport" />
-  
-          
-    
+     
         </div>
         <span b-fjwotxpclx="" className="clearfix"></span>
       </div>
@@ -185,7 +175,7 @@ const Edited = () => {
         </div>
       </div>
       <div b-fjwotxpclx="" id="busy-holder" style={{display: "none"}}>
-        <div b-fjwotxpclx="" id="busy" style={{top: 260.5+"px", left: 610.5+"px"}}>
+        <div b-fjwotxpclx="" id="busy" style={{top: 260.5+"px", left: 618.5+"px"}}>
           <img
             b-fjwotxpclx=""
             src="//admango.cdn.mangomolo.com/analytics/mangopulse/images/loader.gif"
@@ -277,7 +267,7 @@ const Edited = () => {
         </div>
         <div style={{clear: "left"}}>
           <div id="cboxMiddleLeft" style={{float: "left"}}></div>
-          <div id="cboxContent"style={{float: "left"}}>
+          <div id="cboxContent" style={{float: "left"}}>
             <div id="cboxTitle" style={{float: "left"}}></div>
             <div id="cboxCurrent" style={{float: "left"}}></div>
             <button type="button" id="cboxPrevious"></button
@@ -310,34 +300,15 @@ const Edited = () => {
         border: 0+"px",
         padding: 0+"px",
         boxSizing: "content-box",
-        overflowWrap: "break-word",
+        overflowWrap:" break-word",
         overflow: "hidden",
-        height: 0+"px",
+        height: 0+"px" ,
         minHeight: 0+"px" ,
-        fontFamily: "Frutiger",
-        fontSize: 14+"px",
-        fontWeight: "400",
-        fontStyle: "normal",
-        letterSpacing: 0+"px",
-        textTransform: "none",
-        wordSpacing: 0+"px",
-        textIndent: 0+"px",
-        lineHeight: 18+"px",
-        width: 0+"px",
       }}
-      className="autosizejs"
     ></textarea>
-    <div
-      className="tox tox-silver-sink tox-tinymce-aux"
-      style={{position: "relative"}}
-    ></div>
-    <div
-      className="tox tox-silver-sink tox-tinymce-aux"
-      style={{position: "relative"}}
-    ></div>
   </div>
   
   )
 }
 
-export default Edited
+export default ChangePassword

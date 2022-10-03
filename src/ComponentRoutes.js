@@ -19,6 +19,13 @@ import DeletePublish from './components/DeletePublish';
 import Update from './components/Update';
 import Add from './components/Add';
 import Edited from './components/edit/Edited';
+import Logout from './components/Logout';
+import ChangePassword from './components/ChangePassword';
+import Popup from "./components/Popup"
+import NewsLinks from './components/NewsLinks';
+import VideoLinks from './components/VideoLinks';
+import AuthorLinks from './components/AuthorLinks';
+import Collaspe from './components/Collaspe';
 const ComponentsRoutes = () => {
 
   return (
@@ -43,6 +50,13 @@ const ComponentsRoutes = () => {
         <Route element={<Update/>} exact path='/Update'/>
         <Route element={<Add/>} exact path='/Add'/>
         <Route element={<Edited/>} exact path='/Edited'/>
+        <Route element={<Logout/>} exact path='/Logout'/>
+        <Route element={<ChangePassword/>} exact path='/ChangePassword'/>
+        <Route element={<Popup/>} exact path='/Popup'/>
+        <Route element={<NewsLinks/>} exact path='/NewsLinks'/>
+        <Route element={<VideoLinks/>} exact path='/VideoLinks'/> 
+        <Route element={<AuthorLinks/>} exact path='/AuthorLinks'/> 
+        <Route element={<Collaspe/>} exact path='/Collaspe'/> 
       </Routes> 
    
   

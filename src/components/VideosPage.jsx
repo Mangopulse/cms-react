@@ -179,12 +179,12 @@ const VideosPage = () => {
                                 />
                               </a>
                               <div className="cell-data">
-                                <a
-                                  href="/Posts/video/Preview/1075"
+                                <Link
+                                  to="/VideoLinks"
                                   className="cell-title"
                                 >
                                   {val.title}
-                                </a>
+                                </Link>
                                 <div className="text posts-users table-metas">
                                   <div className="posts-mod entry">
                                     {val.date}
@@ -198,7 +198,7 @@ const VideosPage = () => {
                                 <div className="text posts-media">
                                   {videosIcons.map((val) => (
                                     <a
-                                      href="https://as-mangopulse-front.azurewebsites.net/video/1075/testing"
+                                      href={val.link}
                                       className="notajax"
                                       style={{ margin: 2 + "px" }}
                                       target="_blank"

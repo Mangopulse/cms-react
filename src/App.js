@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.css';
-import AlnasherTabs from "./components/alnasherArticles/AlnasherTabs"
 import ComponentsRoutes from './ComponentRoutes';
-import Published from './components/AuthorsTakseem/Published';
+
 import { useState } from 'react';
+
 function App() {
 
     const [username, setUsername] = useState('')
@@ -11,6 +11,8 @@ function App() {
     const [password, setPassword] = useState('')
     const [passwordError, setPasswordError] = useState('')
     const [login, setLoginin]=useState(false)
+    const getUsername=localStorage.getItem("username")
+    const getPassword=localStorage.getItem("password")
     const handleUsernameChange=(e)=>{
       setUsernameError('');
       setUsername(e.target.value);
@@ -28,7 +30,8 @@ function App() {
             setUsernameError('')
             if(password==='1234'){
               setLoginin('open')
-              
+              localStorage.setItem("username","techsupport")
+              localStorage.setItem("password","1234")
             }else{
               setPasswordError('Invalid Password')
             }
@@ -46,12 +49,12 @@ function App() {
       }
     }
   return (
-   
+
   
     <div>
-  
-            {login&& <ComponentsRoutes/>}
-            { !login && 
+ 
+            {getUsername&&getPassword? <ComponentsRoutes/>:
+       
      <div className="login-layout">
       <div className="login-container">
     <div className="client-info">
@@ -128,6 +131,7 @@ function App() {
           value="CfDJ8Gw4EJhP_tFBqoXBSpM7LZ3jO87lr5yBia2BwYzlLFGWVPOkHaZXz3bv4_ZNEY0We6e9qlgDKVLOm9fohpQgkWtH1kP8Bgkn9f4sHxsSvKNW2qsJinwhidrAEtepVoeDIBcJu1Yi7bsM9vA8Zl_ofIY"
         />
       </form>
+      
     </div>
     <div className="login-footer">
       <img
@@ -137,6 +141,7 @@ function App() {
     </div>
   </div>
     </div>
+            
             }
      
 

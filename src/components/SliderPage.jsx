@@ -2,12 +2,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import HorizantalNavbar from './HorizantalNavbar';
-import image1 from "../components/images/dxm.png";
-import image7 from "../components/images/4560ec65-9dcf-4914-ae7d-c082e6b7c44d.jpg?width=250"
-import image8 from "../components/images/44b612ef-a74d-4809-961b-91e41c8e1a2a.jpg?width=250"
-import image9 from "../components/images/1c77ef95-5271-4cfe-aa4a-f4c38ec7aafb.jpg?width=250"
 import { slider, sliderNavigation} from "../dummydata";
 import VerticalNavbar from './VerticalNavbar';
+import Sortable from './Sortable';
 
 
 const SliderPage = () => {
@@ -106,89 +103,7 @@ const SliderPage = () => {
                           data-bind="sortable: posts"
                           className="ui-sortable ko_container"
                         >
-                            {slider.map((val) => (
-                          <div className="profile-activity clearfix">
-                            <div className="make-rtl">
-                              <img
-                                className="pull-right"
-                                style={{
-                                  borderRadius: 0,
-                                  width: 250 + "px",
-                                  maxWidth: 250 + "px",
-                                  height: "auto",
-                                }}
-                                data-bind="attr{src: CoverImage ? '//' + addParameter(CoverImage.MediaUrl, 'width', '250') : JS_CONFIG.ImageNotFound + '?width=250'}"
-                                src={val.image}
-                              />
-                              <div
-                                className="boldclassName"
-                                data-bind="text: Title"
-                              >
-                               {val.title}
-                              </div>
-                              <div data-bind="text: Summary">
-                               {val.description}
-                              </div>
-                              <div
-                                style={{ textAlign: "right", direction: "rtl" }}
-                              >
-                                <span>
-                                  <b>تمت إضافتة:</b>{" "}
-                                  <span data-bind="text: CreationDate">
-                                    {val.added_date}
-                                  </span>{" "}
-                                  -{" "}
-                                  <span data-bind="text: getUserById(CreatedBy)">
-                                    --
-                                  </span>
-                                </span>
-                                <span>
-                                  {" "}
-                                  &nbsp;|&nbsp;<b>تعديل:</b>{" "}
-                                  <span data-bind="text: LastModified">
-                                   {val.edited_date}
-                                  </span>{" "}
-                                  -{" "}
-                                  <span data-bind="text: getUserById(ModifiedBy)">
-                                    --
-                                  </span>
-                                </span>
-
-                                <span>
-                                  {" "}
-                                  &nbsp;|&nbsp;<b>التاريخ:</b>{" "}
-                                  <span data-bind="text: PostDate">
-                                    {val.date}
-                                  </span>
-                                </span>
-                              </div>
-                              <span className="make-rtl">
-                                <span data-bind="html: StatusLabel">
-                                  <span className="label label-success">
-                                  <i className={val.button_icon}></i>
-                                    {val.button}
-                                  </span>
-                                </span>
-                              </span>
-                            </div>
-                            <div className="tools action-buttons">
-                              <Link
-                                to="/slidereyeclick"
-                                className="purple"
-                               
-                              >
-                                <i className={val.eye_icon}></i>
-                              </Link>
-                              <a
-                                href="#"
-                                className="red"
-                                data-bind="click:$parent.removeResult"
-                              >
-                                <i className={val.times_icon}></i>
-                              </a>
-                            </div>
-                          </div>
-                            ))}
+                           <Sortable />
                         </div>
                         <input
                           type="hidden"

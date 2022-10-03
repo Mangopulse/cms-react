@@ -13,9 +13,12 @@ const HorizantalNavbar = () => {
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
 
-  const handleClick = () => setClick(!click);
+  // const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
-
+  const handleClick=()=>{
+    localStorage.clear();
+    window.location.reload();
+}
   const showButton = () => {
     if (window.innerWidth <= 960) {
       setButton(false);
@@ -68,8 +71,10 @@ const HorizantalNavbar = () => {
             >
               <ul className="nav ace-nav">
                 <li className="client-wrapper dropdown-toggle">
-                  <UncontrolledDropdown>
-                    <DropdownToggle color="white">
+                <UncontrolledDropdown>
+                <DropdownToggle color="white"
+                    
+                    >
                       <a data-toggle="dropdown" className="dropdown-toggle">
                         <img
                           src={val.drop_down_logo}
@@ -93,8 +98,8 @@ const HorizantalNavbar = () => {
                           className="clearfix notajax"
                         >
                         
-                          {/* <img src={val.image} />
-                           */}
+                          
+                           
                           <h5>{val.tab}</h5>
                         </a>
                       </DropdownItem>
@@ -102,6 +107,7 @@ const HorizantalNavbar = () => {
                       
                     </DropdownMenu>
                   </UncontrolledDropdown>
+                 
                 </li>
                 <li>
                   <UncontrolledDropdown>
@@ -121,13 +127,19 @@ const HorizantalNavbar = () => {
                        onClick={(e) => e.preventDefault()}
                      >
                        <Link
-                         to="/"
+                         to={val.link}
                          className="clearfix notajax"
                        >
                          <h5
                          style={{fontWeight:"400"}}>
                           <i className={val.icon}></i>
-                          {val.tab}
+                          <button
+                          style={{
+                            border:"none",
+                            backgroundColor:"transparent",
+                          }}
+                          onClick={handleClick}>{val.tab}</button>
+
                           </h5>
                           
                        </Link>
@@ -147,26 +159,27 @@ const HorizantalNavbar = () => {
 
                     <DropdownMenu
                       aria-labelledby="dropdownMenuButton"
-                      style={{ inset: 12 + "px" + "auto" + "auto" + 0 + "px" }}
+                      style={{ inset: 12 + "px" + "auto" + "auto" + 0 + "px"}}
                     >
+                     
                       {HorizantalNavbarGridDropdown.map((val)=>(
-                      <DropdownItem
+                      <DropdownItem 
+                      
                         href="#pablo"
                         onClick={(e) => e.preventDefault()}
                       >
-                        <li className=" active">
-                          <a href="/" className="notajax">
-                            <img src={val.imageA} alt="Experience Manager" />
+                        <li className=" active"  >
+                          <a href="/" className="notajax" >
+                            <img  src={val.imageA} alt="Experience Manager" />
+                         
                           </a>
-                          <a href="/Admin/AdminHome" className="notajax">
-                            <img src={val.imageB} alt="Admin Panel" />
-                          </a>
+                         
+                         
                         </li>
                       </DropdownItem>
                       ))}
-               
                      
-                    
+                   
                     </DropdownMenu>
                   </UncontrolledDropdown>
                 </li>

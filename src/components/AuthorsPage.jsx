@@ -71,7 +71,7 @@ const AuthorsPage = () => {
               </Link>
             </div>
             <h1>{val.author_title}</h1>
-            {/* <div id="bulk-actions">
+             <div id="bulk-actions">
               <a data-href="/Posts/MultiplePublish" className="btn btn-new success"
                 ><i className="fa fa-check"></i>نشر</a
               >
@@ -83,7 +83,7 @@ const AuthorsPage = () => {
               <a data-href="/Posts/MultipleDelete" className="btn btn-new danger"
                 ><i className="fa fa-trash"></i>حذف</a
               >
-            </div> */}
+            </div> 
               {mininavbar.map((val) => (
             <div className="page-operations">
               <Link
@@ -105,7 +105,9 @@ const AuthorsPage = () => {
                 className="btn btn-new active" 
                 to="/AuthorsPage">
                   <input type="radio" value="list" checked="checked" />
-                  <i className={val.list_icon}></i>
+                  <i 
+                  
+                  className={val.list_icon}></i>
                 </Link>
 
                 <label className="btn btn-new" title="عرض جدول">
@@ -175,9 +177,11 @@ const AuthorsPage = () => {
                           />
                         </a>
                         <div className="cell-data">
-                          <a href="/Posts/author/Preview/59" className="cell-title">
+                          <Link
+                           to="/AuthorLinks" 
+                           className="cell-title">
                           {val.title}
-                          </a>
+                          </Link>
                           <div className="text posts-users table-metas">
                             <div className="posts-mod entry">
                               {val.description}
@@ -187,11 +191,11 @@ const AuthorsPage = () => {
                           </div>
                           <div className="text posts-media">
                             <a
-                              href="/Posts/GenerateLinks/470fdf05-f07d-11ec-9860-30d16bee5962"
+                              href="https://as-mangopulse-admin.azurewebsites.net/Assets/Edit/Media/a2661777-f908-11ec-a81d-000d3aa9ccac?type=image"
                               ><i className={val.icon_2}></i
                             ></a>
                             <a
-                              href="/Assets/Edit/Media/a2661777-f908-11ec-a81d-000d3aa9ccac?type=image"
+                              href="http://localhost:3000/Assets/Edit/Media/a2661777-f908-11ec-a81d-000d3aa9ccac?type=image"
                             >
                               <i
                                 className={val.icon_1}

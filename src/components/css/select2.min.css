@@ -621,7 +621,15 @@
 
 .dropdown-item{
     margin-left: 12px !important;
+    width:180px !important;
+    
+    
+}
+.dropdown-item:hover{
+     background-color: transparent !important;
 }
 .rtl .dropdown-menu{
     inset :12px auto auto 0px !important;
+ 
+    
 }

@@ -122,6 +122,7 @@ export const slider=[
 ]
 export const authorHeader=[
     {
+        
         author_title:"Autor",
         author_icon:"fa fa-plus",
         table_row_title:"عنوان",
@@ -194,19 +195,23 @@ export const videoHeader=[
 export const videosIcons=[
     {
         id:1,
-        icon: "fa fa-external-link-alt"
+        icon: "fa fa-external-link-alt",
+        link:"https://as-mangopulse-front.azurewebsites.net/en/video/1413/video-import-test",
     },
     {
         id:2,
-        icon: "yellow fa fa-file-video"
+        icon: "yellow fa fa-file-video",
+        link:"https://as-mangopulse-admin.azurewebsites.net/Assets/Edit/Media/46de5a62-34df-11ed-a81c-000d3aa9c808?type=video"
     },
     {
         id:3,
-        icon:"purple fa fa-file-image"
+        icon:"purple fa fa-file-image",
+        link:"https://as-mangopulse-admin.azurewebsites.net/Assets/Edit/Media/46de5a60-34df-11ed-a81c-000d3aa9c808?type=image"
     },
     {
         id:4,
-        icon:"purple fa fa-file-image"
+        icon:"purple fa fa-file-image",
+        link:"https://as-mangopulse-admin.azurewebsites.net/Assets/Edit/Media/46de5a60-34df-11ed-a81c-000d3aa9c808?type=image"
     }
 ]
 export const videos=[
@@ -1160,26 +1165,33 @@ export const HorizantalNavbarMangopulseDropdown=[
 export const HorizantalNavbarUserDropdown=[
     {
         id:1,
+        link:'/ChangePassword',
         tab:" تغيير كلمة السر",
         icon:"icon fa fa-key",
     },
     {
         id:2,
+        link:"/",
         tab:" تغيير الصورة",
         icon:"icon fa fa-key",
     },
     {
         id:3,
+        link:"",
         tab:"  تسجيل الخروج",
+       
         icon:"icon fa fa-key",
     },
+
     {
         id:4,
+        link:"/",
         tab:" English",
       
     },
     {
         id:5,
+        link:"/",
         tab:"العربية",
     },
 ]
@@ -1211,5 +1223,22 @@ export const HorizantalNavbarGridDropdown=[
         imageA:"../images/target.png",
         imageB:"../images/campaign.png",
     }
+    
+]
+export const AuthorsLinks=[
+  {
+    id:1,
+    title:"Author",
+  },
+  {
+    id:2,
+    title:"Clark Jones",
+  },
+  {
+    id:3,
+    title:"John Smith",
+  }
+   
+
     
 ]

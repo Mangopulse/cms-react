@@ -64,6 +64,7 @@
 
 .rtl .btn {
     text-align: center;
+    margin-top: -10px !important;
 }
 
 .rtl .caret {

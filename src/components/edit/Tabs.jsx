@@ -2,6 +2,8 @@ import React from 'react';
 import { TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, CardText, Row, Col } from 'reactstrap';
 import classnames from 'classnames';
 import { Link } from 'react-router-dom';
+import { Editor } from "@tinymce/tinymce-react";
+import Popup from "../Popup";
 export default class Example extends React.Component {
   constructor(props) {
     super(props);
@@ -93,7 +95,7 @@ export default class Example extends React.Component {
                                   type="text"
                                   autocomplete="off"
                                   autofocus=""
-                                  value="Lebanon to the basketball world cup"
+                                  value="News"
                                   readonly=""
                                   maxlength="256"
                                   data-addedto="10"
@@ -166,11 +168,7 @@ export default class Example extends React.Component {
                                         className="user"
                                         data-bind="visible: (thumbUrl != null)"
                                       >
-                                        <img
-                                          data-bind="attr: { src: thumbUrl , title: title}"
-                                          src="https://as-mangopulse-media.azurewebsites.net/store/archive/image/2022/7/1/4bd0ecc2-0c46-4648-b0f0-1f13249a33c9.jpg"
-                                          title="John Smith"
-                                        />
+                                      
                                       </div>
                                       <div className="body">
                                         <div className="name">
@@ -178,42 +176,27 @@ export default class Example extends React.Component {
                                             data-bind="html: title"
                                             style={{height: 25+"px", overflow: "hidden"}}
                                           >
-                                            John Smith
+                                <Popup />
+                                           
                                           </div>
-                                          <a
-                                            data-bind="attr: {href: previewUrl}"
-                                            className="notajax purple"
-                                            target="_blank"
-                                            href="/Posts/author/Preview/58"
-                                          >
-                                            <i
-                                              className="ace-icon fa fa-eye bigger-120"
-                                            ></i>
-                                          </a>
-                                          <a
-                                            href="#"
-                                            className="red"
-                                            data-bind="click: $parent.removerelative"
-                                          >
-                                            <i
-                                              className="ace-icon fa fa-trash bigger-120"
-                                            ></i>
-                                          </a>
+                                         
+                                         
                                         </div>
                                       </div>
                                     </div>
                                   </div>
                                 </div>
-                                <a
-                                  className="btn btn-new purple"
-                                  data-bind="visible: showAddRelations('ArticleAuthor')"
-                                  data-loadtype="popup"
-                                  href="/Posts/Browse?Types=author&amp;AllowedCount=1&amp;ParentHandler=window.back.pages.postmodule&amp;ReturnValue=ArticleAuthor%3AAuthor"
-                                  style={{display: "none"}}
-                                >
-                                  <i className="fa fa-search"></i>
-                                  إبحث
-                                </a>
+                                  <a
+                                    className="btn btn-new purple"
+                                    data-bind="visible: showAddRelations('ArticleAuthor')"
+                                    data-loadtype="popup"
+                                    href="/Posts/Browse?Types=author&amp;AllowedCount=1&amp;ParentHandler=window.back.pages.postmodule&amp;ReturnValue=ArticleAuthor%3AAuthor"
+                                    style={{display: "none",
+                                            padding:40+"px"}}
+                                  >
+                                    <i className="fa fa-search"></i>
+                                    إبحث
+                                  </a>
                                 <input
                                   type="hidden"
                                   name="Allowed-ArticleAuthor"
@@ -2699,8 +2682,11 @@ export default class Example extends React.Component {
           </TabPane>
           <TabPane tabId="2">
             <Row>
-              <Col sm="12" id="contenttab">
-              المحرر
+              <Col sm="12" id="contenttab" className="make-rtl">
+              <Editor 
+      apiKey="Get your free API key at tiny.cloud and paste it here"
+      plugins="wordcount"
+    />
               </Col>
             </Row>
           </TabPane>

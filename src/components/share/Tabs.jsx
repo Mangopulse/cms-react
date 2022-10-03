@@ -607,7 +607,7 @@ export default class Example extends React.Component {
                                   <div className="content description-1"></div>
                                 </div>
                                 <div className="mobile-frame">
-                                  <img src="/Content/images/mobile.png" />
+                                  <img src="image" />
                                 </div>
                               </div>
                             </div>
